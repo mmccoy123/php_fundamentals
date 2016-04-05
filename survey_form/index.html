@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SurveyForm</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css.php">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+  <form action='result.php' method='post'>
+    <table>
+      <tr>
+        <th><label>Your Name: </label></th><td><input type='text' name='name'></td>
+      </tr>
+      <tr>
+        <th><label>Dojo Localtion:</label></th><td>
+          <select name="location">
+            <option value="Seattle">Seattle</option>
+            <option value="Washington DC">Washington DC</option>
+            <option value="California">California</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label>Favorite Language:</th><td>
+          <select name="language">
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="PHP">PHP</option>
+            <option value="C++">C++</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+      <p>Comment (optional)</p>
+      <textarea name="comment"></textarea><br>
+      <input type='submit' value='Submit' id="submit_btn">
+
+</form>
+</div>
+</body>
+
+</html>

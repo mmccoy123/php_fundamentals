@@ -2,19 +2,19 @@
 
 $row = 1;
 //solution 1
-// if(($data = fopen("us-500.csv", "r")) !== FALSE) {
-    
-//   while(($result = fgetcsv($data, 1000, ",")) !== FALSE) {
-//     $num = count($result);
-//     echo "<p> $num  fields in line $row: <br/></p>\n";
-//     $row++;
-//     for($i=0; $i < $num; $i++) {
-//       echo $result[$i] . "<br/>\n";
-//     }
-//   }
-//
-// fclose($data);
-// }
+if(($data = fopen("us-500.csv", "r")) !== FALSE) {
+  ini_set('auto_detect_line_endings', true);
+  while(($result = fgetcsv($data, 1000, ",")) !== FALSE) {
+    $num = count($result);
+    echo "<p> $num  fields in line $row: <br/></p>\n";
+    $row++;
+    for($i=0; $i < $num; $i++) {
+      echo $result[$i] . "<br/>\n";
+    }
+  }
+
+fclose($data);
+}
 
 //solution 2
 // $csvFile = file("us-500.csv");
@@ -24,21 +24,21 @@ $row = 1;
 // }
 
 //solution 3
-$csv = array_map('str_getcsv', file('us-500.csv'));
-ini_set('auto_detect_line_endings', true);
-echo '<pre>';
-var_dump($csv[0]);
-echo '</pre>';
+// $csv = array_map('str_getcsv', file('us-500.csv'));
+
+// echo '<pre>';
+// var_dump($csv[0]);
+// echo '</pre>';
 //http://stackoverflow.com/questions/817783/read-in-text-file-line-by-line-php-newline-not-being-detected
 
-for($i=0; $i<count($csv[0]); $i++) {
-  echo '<pre>';
-  var_dump($csv[0][$i]);
-  echo '</pre>';
-?>
+// for($i=0; $i<count($csv[0]); $i++) {
+//   echo '<pre>';
+//   var_dump($csv[0][$i]);
+//   echo '</pre>';
+//
 
-<h1>Record <?php echo $i+1 ?></h1>
-<?php } ?>
+// <h1>Record <?php echo $i+1 ?></h1>
+
 <!-- <ul>
   <li>First Name: James</li>
   <li>Last Name: Butt</li>
