@@ -6,11 +6,14 @@ div {
   width: 28px;
 }
 .white {
-  background-color: #fff;
-  border: 2px solid grey;
+  background-color: red;
 }
 .black {
   background-color: #000;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 </style>
